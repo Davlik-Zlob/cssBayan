@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #FEF5E7;
+}
+
+h1 {
+    max-width: 50%;
+    margin: 4vh auto;
+}
+
+.mems {
+    max-width: 50%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.mem-title {
+    cursor: pointer;
+}
+
+.mem-input {
+    display: none;
+}
+
+.mem {
+    display: flex;
+    justify-content: center;
+    margin: 1vh auto;
+    cursor: pointer;
+}
+
+.mem-img {
+    transition: width .5s;
+    width: 0%;
+}
+
+.mem-input:checked ~ .mem .mem-img {
+    width: 50%;
+}
+
+.mem-item:hover .mem .mem-img {
+    width: 50%;
+}
+
+.mem-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon {
+    transition: all .5s;
+    visibility: hidden;
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url('svg/plus-solid.svg');
+    background-size: cover;
+}
+
+.mems:hover .icon {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mem-item:hover .icon {
+    transform: rotate(45deg);
+    visibility: visible;
+}
+
+.mem-input:checked + .mem-title .icon {
+    transform: rotate(45deg);
+}
