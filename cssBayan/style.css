@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #FEF5E7;
+}
+
+h1 {
+    max-width: 50%;
+    margin: 4vh auto;
+}
+
+.mems {
+    max-width: 50%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.mem-title {
+    cursor: pointer;
+}
+
+.mem-input {
+    display: none;
+}
+
+.mem {
+    display: flex;
+    justify-content: center;
+    margin: 1vh auto;
+    cursor: pointer;
+}
+
+.mem-img {
+    transition: opacity .5s, width .5s;
+    width: 0%;
+}
+
+.mem-input:checked ~ .mem .mem-img {
+    width: 50%;
+}
+
+.mem-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .5s;
+}
+
+.icon {
+    transition: all .5s;
+    visibility: hidden;
+    opacity: 0;
+    width: 2vh;
+    height: 2vh;
+    background-image: url('images/plus-solid.svg');
+    background-size: cover;
+}
+
+.mem-input:checked + .mem-title .icon {
+    transform: rotate(45deg);
+}
+
+.mem-input:not(:checked) + .mem-title {
+    color: #0000e4;
+}
+
+.mem-input:active + .mem-title .icon {
+    background-image: url('images/plus-blue.svg');
+}
+
+.mem-input:active ~ .mem .mem-img {
+    opacity: .5;
+}
+
+@media (hover:hover) {
+
+    .mems:hover .mem-title{
+        color: #000000;
+    }
+
+    .mem-input:active + .mem-title {
+        color: #0000e4;
+    }
+
+    .mem-item:hover .mem .mem-img {
+        width: 50%;
+    }
+
+    .mems:hover .icon {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .mem-item:hover .icon {
+        transform: rotate(45deg);
+        visibility: visible;
+    }
+} 
+
+@media screen and (max-width: 820px) {
+    body {
+        font-size: 1.2rem;
+    }
+    h1 {
+        max-width: 75%;
+    }
+    .mems {
+        max-width: 75%;
+    }
+    .mem-input:checked ~ .mem .mem-img {
+        max-width: 75%;
+    }
+    .icon {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    body {
+        font-size: 1rem;
+    }
+    h1 {
+        max-width: 90%;
+    }
+    .mems {
+        max-width: 90%;
+    }
+    .mem-input:checked ~ .mem .mem-img {
+        max-width: 90%;
+    }
+    .icon {
+        opacity: 1;
+        visibility: visible;
+    }
+}
