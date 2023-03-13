@@ -44,6 +44,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: .5s;
 }
 
 .icon {
@@ -60,7 +61,24 @@ h1 {
     transform: rotate(45deg);
 }
 
+.mem-input:not(:checked) + .mem-title {
+    color: #0000e4;
+}
+
+.mem-input:active + .mem-title .icon {
+    background-image: url('images/plus-blue.svg');
+}
+
 @media (hover:hover) {
+
+    .mems:hover .mem-title{
+        color: #000000;
+    }
+
+    .mem-input:active + .mem-title {
+        color: #0000e4;
+    }
+
     .mem-item:hover .mem .mem-img {
         width: 50%;
     }
