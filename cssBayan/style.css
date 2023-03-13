@@ -32,7 +32,7 @@ h1 {
 }
 
 .mem-img {
-    transition: width .5s;
+    transition: opacity .5s, width .5s;
     width: 0%;
 }
 
@@ -67,6 +67,10 @@ h1 {
 
 .mem-input:active + .mem-title .icon {
     background-image: url('images/plus-blue.svg');
+}
+
+.mem-input:active ~ .mem .mem-img {
+    opacity: .5;
 }
 
 @media (hover:hover) {
